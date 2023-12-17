@@ -1,0 +1,45 @@
+﻿{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/Items",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7244
+                }
+            ],
+            "UpstreamPathTemplate": "/gateway/Items",
+            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+            "SwaggerKey": "items"
+        },
+        {
+            "DownstreamPathTemplate": "/api/Items/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7244
+                }
+            ],
+            "UpstreamPathTemplate": "/gateway/Items/{id}",
+            "UpstreamHttpMethod": [ "GET", "DELETE" ],
+            "SwaggerKey": "items"
+        }
+    ],
+    "SwaggerEndPoints": [
+        {
+            "Key": "items",
+            "Config": [
+                {
+                    "Name": "Items API",
+                    "Version": "v1",
+                    "Url": "http://localhost:7244/swagger/v1/swagger.json"
+                }
+            ]
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "http://localhost:7192"
+    }
+}
